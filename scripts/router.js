@@ -1,7 +1,7 @@
 
 const urlRoutes = {
     404: {
-        template: `404`,
+        template: "pages/404.html",
         title: "Page not found",
         description: "Page not found",
     },
