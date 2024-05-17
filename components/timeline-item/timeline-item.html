@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="{baseUrl}css/global.css">
+
+<div class="timeline-item glass">
+    <div class="timeline-icon">
+        <i class="fas fa-briefcase"></i>
+    </div>
+
+    <div class="time-container">
+        <div class="start time-text">August 2000t</div>
+        <div class="time-text">&nbsp;&nbsp;-&nbsp;&nbsp;</div>
+        <div class="end time-text">Present</div>
+    </div>
+
+    <div class="job-container">
+        <div class="work job-text">Unity Developer Mentor</div>
+        <div class="job-text">&nbsp;&nbsp;-&nbsp;&nbsp;</div>
+        <div class="company job-text"> - Motion Web LLC</div>
+    </div>
+
+    <slot name="timeline-keys">
+        <p>- Creating gameplay systems;</p>
+    </slot>
+</div>
+
+<style>
+    .timeline-item {
+
+        width: 300px;
+
+        border-radius: 25px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+    }
+
+    .time-container {
+        display: flex;
+    }
+
+    .time-text {
+        color: rgb(0, 255, 0);
+    }
+
+    .job-container {
+        display: flex;
+    }
+
+    .job-text {
+        color: rgb(0, 255, 0);
+        font-size: 15px;
+    }
+</style>

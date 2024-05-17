@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' *.samhereis.github.io/umtul/; 
+             script-src 'self' 'unsafe-inline' *.samhereis.github.io/umtul/; 
+             style-src 'self' 'unsafe-inline' *.samhereis.github.io/umtul/; 
+             img-src 'self' 'unsafe-inline' *.samhereis.github.io/umtul/; 
+             connect-src 'self' 'unsafe-inline' *.samhereis.github.io/umtul/;">
+
+    <meta name=" description" content="">
+
+    <title>Umtul</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/controls.css">
+
+    <link rel="icon" type="image/png" href="/umtul/img/Branding/Erten Games Icon.png">
+</head>
+
+<body>
+    <div class="ignore-clicks" id="video-container">
+        <video class="ignore-clicks" id="video-background" autoplay loop muted playsinline>
+            <source src="img/background_3.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="content-body" id="main-content">
+    </div>
+
+    <nav class="page-controls_nav glass">
+        <a href="/">
+            Home
+        </a>
+        <a href="/projects">
+            Projects
+        </a>
+    </nav>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/router.js"></script>
+
+    <script src="/umtul/components/short-head-info/short-head-info.js"></script>
+    <script src="/umtul/components/skill-item/skill-item.js"></script>
+    <script src="/umtul/components/timeline-item/timeline-item.js"></script>
+    <script src="/umtul/components/project-item/project-item.js"></script>
+</body>
+
+</html>
