@@ -1,136 +1,172 @@
 .main-content-holder {
     display: flex;
     flex-direction: column;
-
     align-items: start;
+    gap: 16px;
 }
 
-.main_about_holder {
-    background-color: var(--color-primary_background);
-    border-radius: 25px;
-
-    margin: 10px 0px 0px 0px;
-}
-
-.main_about_contacts {
-    border-radius: 25px;
-}
-
-.contact-item {
-    margin: 10px;
-    padding: 10px;
-    font-size: 1rem;
-
-    background-color: var(--color-primary_background);
-    border-radius: 20px;
-}
-
+/* ── Profile image + CV ── */
 .main_profile-image_holder {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    gap: 16px;
 }
 
 .main_profile_image {
-    border-radius: 25px;
-    width: 250px;
-    height: 250px;
-}
-
-.main_about_holder {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-me {
-    font-size: 50px;
-    margin: 20px;
-    border-radius: 50px
-}
-
-.about-me p {
-    color: var(--color-secondary);
+    border-radius: var(--radius-md);
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 .download-cv_link {
-    margin-top: 10px;
     align-self: center;
-
-    background-color: var(--color-secondary);
-    border-radius: 25px;
+    background: var(--accent);
+    border-radius: 100px;
     text-decoration: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.download-cv_link:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
 }
 
 .download-cv_text {
-    color: var(--color-primary);
-    text-align: center;
-    margin: 10px 20px 10px 20px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 10px 24px;
 }
 
-.contact-icon {
-    height: 35px;
-    width: 35px;
+/* ── About card ── */
+.main_about_holder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
 }
 
-.contact-icon img {
-    height: 100%;
-    width: 100%;
-    transition: filter 0.5s ease;
+.main_about_text {
+    padding: 4px;
 }
 
-.contact-icon img:hover {
-    filter: brightness(0) saturate(100%) invert(67%) sepia(52%) saturate(4769%) hue-rotate(78deg) brightness(111%) contrast(131%);
+.about-me {
+    padding: 20px 24px;
+}
+
+.about-me h1 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
+.about-me h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(240, 240, 248, 0.8);
+    line-height: 1.65;
+}
+
+.about-me p {
+    color: rgba(240, 240, 248, 0.75);
+}
+
+/* ── Contacts ── */
+.main_about_contacts {
+    border-top: 1px solid var(--border);
+    padding: 16px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+}
+
+.contact-item span {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
 }
 
 .contact-icons {
-    margin: 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
+.contact-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    filter: brightness(0) invert(1) opacity(0.6);
+}
+
+.contact-icon img:hover {
+    filter: brightness(0) invert(1) opacity(1);
+    transform: scale(1.1);
+}
+
+/* ── Stat cards ── */
 .short-head-info-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
     justify-items: center;
 }
 
+/* ── Skills ── */
 .skill-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    justify-items: center;
+    justify-content: center;
 }
 
+/* ── Timeline ── */
 .timeline-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
     justify-items: center;
 }
 
+/* ── Responsive ── */
 @media (min-width: 1024px) {
     .main_profile_image {
-        border-radius: 25px;
-        width: 450px;
-        height: 450px;
+        width: 400px;
+        height: 400px;
     }
 
     .main-content-holder {
         flex-direction: row;
+        align-items: stretch;
     }
 
     .main_profile-image_holder {
         flex-direction: column;
-        max-height: 100%;
-        max-width: 30%;
-    }
-
-    .main_about_holder {
-        margin: 0px 0px 0px 10px;
+        max-width: 28%;
+        justify-content: flex-start;
+        padding-top: 8px;
     }
 }
 
@@ -139,14 +175,8 @@
         flex-direction: column;
     }
 
-    .skill-items {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
-        justify-items: center;
-    }
-
-    .main_about_holder {
-        margin: 0px 0px 0px 0px;
+    .main_profile_image {
+        width: 180px;
+        height: 180px;
     }
 }

@@ -1,51 +1,109 @@
 <link rel="stylesheet" href="{baseUrl}css/global.css">
 
-<div class="timeline-item glass">
-    <div class="timeline-icon">
-        <i class="fas fa-briefcase"></i>
-    </div>
-
-    <div class="time-container">
-        <div class="start time-text">August 2000t</div>
-        <div class="time-text">&nbsp;&nbsp;-&nbsp;&nbsp;</div>
-        <div class="end time-text">Present</div>
+<div class="timeline-item">
+    <div class="timeline-header">
+        <div class="time-range">
+            <span class="time-text start">August 2023</span>
+            <span class="time-sep">→</span>
+            <span class="time-text end">Present</span>
+        </div>
     </div>
 
     <div class="job-container">
-        <div class="work job-text">Unity Developer Mentor</div>
-        <div class="job-text">&nbsp;&nbsp;-&nbsp;&nbsp;</div>
-        <div class="company job-text"> - Motion Web LLC</div>
+        <p class="work-title work">Unity Developer Mentor</p>
+        <p class="company-name company">Motion Web LLC</p>
     </div>
 
-    <slot name="timeline-keys">
-        <p>- Creating gameplay systems;</p>
-    </slot>
+    <div class="timeline-keys">
+        <slot name="timeline-keys">
+            <p>- Creating gameplay systems;</p>
+        </slot>
+    </div>
 </div>
 
 <style>
     .timeline-item {
-
-        width: 300px;
-
-        border-radius: 25px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 15px;
+        width: 100%;
+        max-width: 360px;
+        border-radius: var(--radius-md);
+        padding: 20px 22px;
+        border: 1px solid var(--accent, #7c6fff);
+        background: var(--surface, #16161f);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-sizing: border-box;
     }
 
-    .time-container {
+    .timeline-header {
         display: flex;
+        align-items: center;
+    }
+
+    .time-range {
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .time-text {
-        color: rgb(0, 255, 0);
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--accent, #7c6fff);
+        letter-spacing: 0.01em;
+    }
+
+    .time-sep {
+        font-size: 0.78rem;
+        color: rgba(124, 111, 255, 0.5);
     }
 
     .job-container {
         display: flex;
+        flex-direction: column;
+        gap: 2px;
     }
 
-    .job-text {
-        color: rgb(0, 255, 0);
-        font-size: 15px;
+    .work-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #f0f0f8;
+        margin: 0;
+    }
+
+    .company-name {
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: rgba(240, 240, 248, 0.5);
+        margin: 0;
+    }
+
+    .timeline-keys {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 10px;
+    }
+
+    .timeline-keys ::slotted(div) {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .timeline-keys ::slotted(p),
+    .timeline-keys p {
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: rgba(240, 240, 248, 0.65);
+        margin: 2px 0;
+        line-height: 1.5;
+    }
+
+    .timeline-keys a {
+        color: var(--accent, #7c6fff);
+        text-decoration: none;
+    }
+
+    .timeline-keys a:hover {
+        text-decoration: underline;
     }
 </style>

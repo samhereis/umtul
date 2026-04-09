@@ -1,35 +1,31 @@
 <link rel="stylesheet" href="{baseUrl}css/global.css">
 
-<div class="skill-item glass">
-    <p class="skill-text text-center">OOP</p>
+<div class="skill-item">
+    <p class="skill-text">OOP</p>
 </div>
 
 <style>
     .skill-item {
-        background-color: rgba(0, 75, 10, 0.5);
-
-        height: 35px;
-        width: 200px;
-
-        border-radius: 25px;
-
-        display: flex;
+        background: var(--accent-soft);
+        border: 1px solid rgba(124, 111, 255, 0.25);
+        border-radius: 100px;
+        padding: 7px 18px;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
+        transition: background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .skill-item:hover {
+        background: rgba(124, 111, 255, 0.22);
+        border-color: rgba(124, 111, 255, 0.45);
     }
 
     .skill-text {
-        font-size: 15px;
-        color: rgb(255, 255, 255);
-    }
-
-    @media (max-width: 550px) {
-        .skill-item {
-            width: 150px;
-        }
-
-        .skill-text {
-            font-size: 12px;
-        }
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: rgba(200, 196, 255, 0.95);
+        white-space: nowrap;
+        margin: 0;
     }
 </style>

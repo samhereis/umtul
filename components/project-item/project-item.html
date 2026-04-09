@@ -1,101 +1,102 @@
 <link rel="stylesheet" href="{baseUrl}css/global.css">
 
-<div class="project-item">
-    <div class="project-icon-container ">
+<div class="project-item glass">
+    <div class="project-icon-container">
         <img class="project-icon" src="img/projects/DHMMT.jpg" alt="">
     </div>
-    <div class="project-info-container">
-        <div class="project-name-container glass">
-            <h3 class="project-name">Don't Hate My Music Taste</h3>
-        </div>
-        <div class="project-links-container glass">
-
-        </div>
+    <div class="project-footer">
+        <p class="project-name">Don't Hate My Music Taste</p>
+        <div class="project-links-container"></div>
     </div>
 </div>
 
 <style>
     .project-item {
-        width: 300px;
-        height: 300px;
-        position: relative;
+        width: 100%;
+        max-width: 300px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
     }
 
     .project-icon-container {
         width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
     }
 
     .project-icon {
         width: 100%;
         height: 100%;
-        border-radius: 15px;
-        background-color: var(--color-primary);
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
     }
 
-    .project-info-container {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
+    .project-item:hover .project-icon {
+        transform: scale(1.04);
+    }
+
+    .project-footer {
+        padding: 14px 16px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-direction: column;
-    }
-
-    .project-name-container {
-        width: 95%;
-        height: 50px;
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        background-color: rgba(0, 0, 0, 0.5);
+        gap: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     .project-name {
-        padding: 5px;
-        font-size: 1.5;
-        color: var(--color-secondary);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text, #f0f0f8);
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .project-links-container {
-        margin-bottom: 10px;
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: 15px;
-        width: 95%;
-        height: 50px;
-        border-radius: 15px;
-        background-color: rgba(255, 255, 255, 0.5);
+        gap: 8px;
+        flex-shrink: 0;
     }
 
     .project-link {
-        width: 45px;
-        height: 45px;
+        width: 32px;
+        height: 32px;
         border-radius: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.18s ease;
+    }
+
+    .project-link:hover {
+        background: rgba(255, 255, 255, 0.16);
+    }
+
+    .project-link-icon {
+        width: 16px;
+        height: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .project-link-icon {
-        width: 25px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .project-link-icon img {
+        width: 100%;
+        height: 100%;
+        filter: brightness(0) invert(1) opacity(0.8);
     }
 </style>

@@ -17,32 +17,24 @@ const urlRoutes = {
     }
 };
 
-// Strip the base path prefix from an absolute pathname to get the route key
-const toRoutePath = (pathname) => {
-    const base = BaseUrl.baseUrl.replace(/\/$/, ''); // e.g. "/umtul" or ""
-    if (base && pathname.startsWith(base)) {
-        pathname = pathname.slice(base.length);
-    }
-    // Treat /index.html (Live Server default) and empty string as home
-    if (!pathname || pathname === '/index.html') return '/';
-    return pathname;
+// Read the current route from the hash (e.g. "#/projects" → "/projects")
+const getRoutePath = () => {
+    const hash = window.location.hash; // e.g. "" or "#/" or "#/projects"
+    if (!hash || hash === '#' || hash === '#/') return '/';
+    return hash.slice(1); // strip the leading "#"
 };
 
 document.addEventListener("click", (e) => {
     const { target } = e;
-    if (!target.matches("nav a")) {
-        return;
-    }
+    if (!target.matches("nav a")) return;
     e.preventDefault();
     const routePath = target.getAttribute('href'); // e.g. "/" or "/projects"
-    const fullPath = BaseUrl.baseUrl.replace(/\/$/, '') + routePath;
-    window.history.pushState({}, "", fullPath);
-    urlLocationHandler();
+    window.location.hash = routePath;
+    // hashchange event will fire and call urlLocationHandler
 });
 
 const urlLocationHandler = () => {
-    const routePath = toRoutePath(window.location.pathname);
-    setPage(routePath);
+    setPage(getRoutePath());
 };
 
 const setPage = async (routePath) => {
@@ -56,9 +48,12 @@ const setPage = async (routePath) => {
         document.getElementById("main-content").innerHTML = "<p>Failed to load page.</p>";
     }
     document.title = route.title;
+
+    document.querySelectorAll('nav a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === routePath);
+    });
 };
 
-window.onpopstate = urlLocationHandler;
-window.route = urlLocationHandler;
+window.addEventListener('hashchange', urlLocationHandler);
 
 urlLocationHandler();
